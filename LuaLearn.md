@@ -135,4 +135,7 @@ local f = loadlib(path,"luaopen_socket")
 local f = assert(package.loadib(path,"function_outside")
 f(); -- actually execute
 ```
+## metatable 元表
+元表实现了让一个lua对象可以重载一些方法，每一个重载的对象都有一个对应的原表方法与其对应，类似于 其他语言中的运算符重载 [referrence](http://lua-users.org/wiki/MetamethodsTutorial)
+
 
