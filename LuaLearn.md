@@ -1,4 +1,4 @@
-[toc]
+[:toc]
 # LuaLearn (especially for nvim config)
 ## 注释
 - 单行注释 `--`
@@ -15,15 +15,14 @@
 ## 数据类型 
 - lua为动态数据类型语言，变量不需要定义类型，只需要为变量赋值，值可以储存在变量中，作为参数传递或结果返回
 - 八个基本数据类型：
-	- nil(无效值 或false`在条件表达式中`)
+	- nil(无效值 或false`在条件表达式中`), 可以使用nil撤销变量的定义，`var = nil`
 	- boolean (true or false)
 	- number (双精度的float)
-	- string 使用’‘  或 “” 表示
+	- string 使用’‘  或 “” 表示 支持 [[ ]]形式去给变量赋值多行文字，这样的句法在init.lua配置中经常出现，如`vim.cmd([[ multiple lines content ]])`, 相当于变相的在lua中 使用vimscript去做配置
 	- function lua或者C定义的函数
 	- userdata 表示存储在变量中的C数据结构
 	- thread 
-	- **table** lua中的表其实是一个关联数组，数组的索引可以是数字、字符串或表类型。有点类似json（？）,通过“构造表达式”来创建，最简单的构造表达式是{},这是一个空表
-- type() 可以测试给定变量或者值的类型,返回值是一个string  
+	- **table** lua中的表其实是一个关联数组，数组的索引可以是数字、字符串或表类型。有点类似json（？）,通过“构造表达式”来创建，最简单的构造表达式是{},这是一个空表 - type() 可以测试给定变量或者值的类型,返回值是一个string  
 	> note:type（a）== nil 结果是false,因为nil看作string的话是一个无效值，故应该用 type(a）== “nil"('nil'),return true
 - table（表）,关联数组，索引可以是数字或者字符串
 	```lua
@@ -85,7 +84,27 @@ optianal_function_scope function functionname(arguement1, arguement2, arguement3
 	-- result 25
 	```
 	- Note: select('#',...),select(n, ...)使用在确定不定长参数的个数,和选择上
+## 三元操作 同c/js a?b:c -> a and b or c
 
+## 函数
+支持匿名函数和闭包函数
+```lua
+    function fib(n)
+        if n<2 then return end
+        return fib(n-1) + fib(n-2)
+    end
+```
+```lua
+function adder(x)
+    return function(y) return x+y end
+end
+
+a1 = adder(9)
+a2 = adder(36)
+print(a1(16)) --> 25
+print(a2(64)) --> 100
+--相当于一个 “函数宏”
+```
 ## table 表
 lua table 是一种关联型数组,associative array,用来解决 module package object
 
