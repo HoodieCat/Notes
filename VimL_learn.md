@@ -9,6 +9,6 @@
 	- 以.vim 作为suffix的文件一般看做vim脚本，用"做注释
 	- 每一行其实对应了 在ex mode 下进行输入，但是可以不在行首写冒号`:`
 	- finish 表示直接结束脚本（optional），otherwise till the eof
-:h 
+1.3 &vim.options返回 vim.options中的value值
 
 

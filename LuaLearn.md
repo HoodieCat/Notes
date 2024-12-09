@@ -1,4 +1,4 @@
-[:toc]
+[toc]
 # LuaLearn (especially for nvim config)
 ## 注释
 - 单行注释 `--`
@@ -8,7 +8,7 @@
 	**content
 	--]]
 	```
-- 标识符 最好不要使用行如 _ABC 这样的下划线加大写字母的标识符，因为lua保留字也是这样的方式,且lua区分大小写，A a 是不用的变量
+- 标识符 最好不要使用行如 _ABC 这样的下划线加大写字母的标识符，因为lua保留字也是这样的方式,且lua区分大小写，A a 是不同的变量
 
 ## 变量默认全局（即不用local 标识，申明的变量默认为global）
 
@@ -47,8 +47,10 @@ lua有三种变量类型：全局变量、局部变量、表中的域
 
 局部变量的生命周期从声明位置开始到所在语句块结束,没有赋值的任何变量默认值为nil
 - 索引 对table的索引使用方括号,同时
-t[i]
-t.i  --当索引是字符串时,可以简化为此种方式
+	```lua
+	t[i]
+	t.i    --当索引是字符串时,可以简化为此种方式
+	```
 getttable_event(t,i) --采用索引的本质是使用了类似这样的函数调用
 
 ## 函数 
@@ -105,8 +107,12 @@ print(a1(16)) --> 25
 print(a2(64)) --> 100
 --相当于一个 “函数宏”
 ```
+
+- 调用函数的时候，如果只有一个字符串或者一个table作为参数，是可以省略func()的（）的 比如，`print()` 也可以是print"Hello" 同样 print{}
+    
 ## table 表
 lua table 是一种关联型数组,associative array,用来解决 module package object
+> 值得注意的是 table的字面值，即key默认是字符串类型，所以key="string",是省略"key"的用法，同样可以table.key,table[key],而不用table["key"],和函数一样,#符号可以用于得到table的key数量，如#table，返回值key数量
 
 ## lua Module/Package
 **lua的模块是有变量和函数等已知元素组成的table(类似c struct/class?),因此创建一个module很简单,就是创建一个table,然后把需要倒入的常量,函数放入其中,返回这个table

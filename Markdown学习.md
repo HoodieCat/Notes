@@ -1,59 +1,49 @@
 [toc]
 
-# Markdown 语法 -*强调*
+# Markdown 语法
 
-- 粗体（Bold) 
-`****`  **
+- **粗体** (bold)
+> 用 \*\*content\*\* 或者 \_\_content\_\_ 实现，中间不能有空格
 
+- *斜体* (italic)
+> 用\*content\ 或者 \_content\_实现 ，中间不能有空格
+- ***粗斜体***(BoldAndItalic) 
+> 等于上面之和，即\*\*\*content\*\*\* 或 \_\_\_content\_\_\_
+- ~~删除线~~
+> 使用\~\~content\~\~ 即可实现
 
-	wfzi 
+# Markdown 标题语法 
 
+有两种形式：
+- Setext形式 
+> H1
+  ==
+  H2 
+  --
 
-# Markdown 标题语法 /*这是一个一级标题*/
+效果如下：
+
+H1
+==
+h2
+--
 
 # *列表*
 - 有序列表  
 数字后面紧跟一个英文局点. 数字
-	1. first
-		1. test3
-			- 理解
-				1. lv
-				2. ge
-				3. diangun
-			- let
-			- it 
-			- go
-		2. test4
-		3. test5
-	2. second  
-	3. third  
 1. test
-2. test
-3. test3
-4. test
+	1. second 
+	1. third
+1. test
+1. test3
+	1. fourth
+1. test
 	1) test
-	2) test
+	1) test
 
 - 无序列表  
-```
-用-<space>content 的形式来使用，也可以使 * 、 + 看个人习惯
-```
-- 在列表循环中，使用eol<space><space>换行 如果想跳出列表循环，采取空一行的方式，表示此段列表结束,即列表内容也视为一个段落
-- 当在列宾循环中插入符合列表缩进的内容时，内容保持和当前列表同样 的缩进即可比如：
-```
-1. xxx
-    1. xxx
-    ```
-    funca()
-    end 
-    ```
-    > quote something
-```
-效果是：
-1. xxx
-    1. xxx
-    ```
-    funca()
-    end
-    ```
-    > quote something
+> 用- * + 加一个空格加上内容
+
+> ```python
+> print("hello world")
+> ```
