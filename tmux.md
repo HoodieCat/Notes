@@ -49,9 +49,15 @@ Tmux using the prefix key to catch Tmux action, the default is <C-b>, in my [con
 
 <C-+> split window vertically (default is<C-%>")
 
-<c-x> close pane
+<C-x> close pane
 
 <C-o> select the next pane
 
-```
+-- user config keymap
 
+ h/j/k/l select the windows left/below/up/right
+
+ <C-j>/<C increse pane to the left 5 unints
+
+```
+[refernce](https://www.cnblogs.com/zuoruining/p/11074367.html)

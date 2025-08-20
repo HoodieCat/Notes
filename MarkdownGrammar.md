@@ -1,14 +1,19 @@
 [toc]
+# Markdown Grammar
+- **BOld** (bold)
 
-# Markdown 语法
+implement by using \*\*cotent\*\* or \_\_cotent\_\_ without spaces between content and symbol  
 
-- **粗体** (bold)
-> 用 \*\*content\*\* 或者 \_\_content\_\_ 实现，中间不能有空格
+- *Italic*
 
-- *斜体* (italic)
-> 用\*content\ 或者 \_content\_实现 ，中间不能有空格
+implement by using \*content\* or \_cotent\_ without spaces between content and symbol
+
 - ***粗斜体***(BoldAndItalic) 
-> 等于上面之和，即\*\*\*content\*\*\* 或 \_\_\_content\_\_\_
+- ***Bold and Italic***
+
+equivalent to the sum of usage above
+
+ 
 - ~~删除线~~
 > 使用\~\~content\~\~ 即可实现
 
